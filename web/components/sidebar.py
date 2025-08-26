@@ -269,7 +269,19 @@ def render_sidebar():
             # 保存到持久化存储
             save_model_selection(st.session_state.llm_provider, st.session_state.model_category, llm_model)
         elif llm_provider == "siliconflow":
-            siliconflow_options = ["Qwen/Qwen3-30B-A3B-Thinking-2507", "Qwen/Qwen3-30B-A3B-Instruct-2507", "Qwen/Qwen3-235B-A22B-Thinking-2507", "Qwen/Qwen3-235B-A22B-Instruct-2507","deepseek-ai/DeepSeek-R1", "zai-org/GLM-4.5", "moonshotai/Kimi-K2-Instruct"]
+            siliconflow_options = [
+                "Qwen/Qwen3-30B-A3B-Thinking-2507", 
+                "Qwen/Qwen3-30B-A3B-Instruct-2507",
+                 "Qwen/Qwen3-235B-A22B-Thinking-2507", 
+                 "Qwen/Qwen3-235B-A22B-Instruct-2507",
+                 "deepseek-ai/DeepSeek-R1", 
+                 "zai-org/GLM-4.5", 
+                 "moonshotai/Kimi-K2-Instruct",
+                 "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B",
+                 "Qwen/Qwen3-8B",
+                 "THUDM/GLM-Z1-9B-0414",
+                 "Qwen/Qwen2.5-7B-Instruct",
+                 ]
 
             # 获取当前选择的索引
             current_index = 0
@@ -288,6 +300,10 @@ def render_sidebar():
                     "deepseek-ai/DeepSeek-R1": "DeepSeek-R1",
                     "zai-org/GLM-4.5": "GLM-4.5 - 智谱",
                     "moonshotai/Kimi-K2-Instruct": "Kimi-K2-Instruct",
+                    "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B": "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B",
+                    "Qwen/Qwen3-8B": "Qwen/Qwen3-8B",
+                    "THUDM/GLM-Z1-9B-0414": "THUDM/GLM-Z1-9B-0414",
+                    "Qwen/Qwen2.5-7B-Instruct": "Qwen/Qwen2.5-7B-Instruct",
                 }[x],
                 help="选择用于分析的siliconflow模型",
                 key="siliconflow_model_select"
